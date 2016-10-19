@@ -94,8 +94,7 @@ Click on Add Parameter # I assume that you know how to add parameter to paramete
 #18: Boolean Parameter
     Name: Enable_Monitoring
 
-# That is all. Copy the files at server and modify the path as per location on the server
-# And wait for magic to happen
+That is all. Copy the files at server and modify the path as per location on the server and wait for magic to happen
 
 
 

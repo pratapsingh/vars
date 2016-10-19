@@ -6,6 +6,9 @@ Before begining with the job creation make sure you have "Active choices reactiv
 Install boto and configure boto credential under user running Jenkins.
 Create proper IAM role for AWS user to launch instance, create disk, elastic IP
 
+Basic knowledge of Ansible and working with playbook is must. 
+
+
 #Here we go
 Create A new item in jenkins with the name "Project name" as "Instance_Creation"
 

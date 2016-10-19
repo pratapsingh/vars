@@ -52,46 +52,46 @@ Click on Add Parameter # I assume that you know how to add parameter to paramete
            Paste the groovy script "KeyPair.groovy" content here and modify path of your shell/python scripp
          Single Select
          Referenced Parameter: Select_Region,Select_Account
-#7: Choice parameter
-   Name: Select_AMI
+#7: Choice parameter:
+       Name: Select_AMI
          Enter your all ami name in list
-#8: Choice Parameter
-   Name: Instance_Type
+#8: Choice Parameter:
+      Name: Instance_Type
         Enter instance type in list
-#9: Choice Parameter
+#9: Choice Parameter:
    Name: Disk_Type
          Enter disk types
-#10: Validate string Parameter
+#10: Validate string Parameter:
    Name: Disk_Size
    Default 0
    Regx: [0-9]+
-#11: Validate string Parameter
+#11: Validate string Parameter:
    Name: Name_Tag
    Default 
    Regx: .+
-#12: Validate string Parameter
+#12: Validate string Parameter:
    Name: Email_Tag
    Default 
    Regx: .*@gmail.com
-#13: Validate string Parameter
+#13: Validate string Parameter:
    Name: Team_Tag
    Default 
    Regx: .+
-#14: Validate string Parameter
+#14: Validate string Parameter:
    Name: Project_Tag
    Default 
    Regx: .+
-#15: Choice Parameter
+#15: Choice Parameter:
    Name: Environment_Tag
    Enter list of your env to choose from
-#16: Public_IP_Required
+#16: Public_IP_Required:
    Name: Public_IP_Required
    Single Select
    Value: None,Public_IP, Elastic_IP
-#17: Text Parameter
+#17: Text Parameter:
     Name: User_Data
     Enter the user data. Eache shell script line should be terminated with ';' .
-#18: Boolean Parameter
+#18: Boolean Parameter:
     Name: Enable_Monitoring
 
 That is all. Copy the files at server and modify the path as per location on the server and wait for magic to happen

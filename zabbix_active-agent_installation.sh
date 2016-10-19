@@ -1,4 +1,8 @@
 #!/bin/bash
+# Script is written to install zabbix on fresh new instance/host. You need to run the script as mentioned below
+# /bin/bash zabbix_active-agent_installation.sh webserver facebook-app
+# Where webserver is desired hostname or group/service it belongs to, then HostMetadata is AutoRegistration Action created under zabbix
+# for your project/team
 
 Hostname=$1
 Hostmetadata=$2

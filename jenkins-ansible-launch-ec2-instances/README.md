@@ -59,48 +59,39 @@ Click on Add Parameter # I assume that you know how to add parameter to paramete
       Name: Instance_Type
         Enter instance type in list
 #9: Choice Parameter:
-   Name: Disk_Type
+        Name: Disk_Type
          Enter disk types
 #10: Validate string Parameter:
-   Name: Disk_Size
-   Default 0
-   Regx: [0-9]+
+      Name: Disk_Size
+      Default 0
+      Regx: [0-9]+
 #11: Validate string Parameter:
-   Name: Name_Tag
-   Default 
-   Regx: .+
+           Name: Name_Tag
+            Default 
+            Regx: .+
 #12: Validate string Parameter:
-   Name: Email_Tag
-   Default 
-   Regx: .*@gmail.com
+      Name: Email_Tag
+      Default 
+      Regx: .*@gmail.com
 #13: Validate string Parameter:
-   Name: Team_Tag
-   Default 
-   Regx: .+
+      Name: Team_Tag
+      Default 
+      Regx: .+
 #14: Validate string Parameter:
-   Name: Project_Tag
-   Default 
-   Regx: .+
+      Name: Project_Tag
+      Default 
+      Regx: .+
 #15: Choice Parameter:
-   Name: Environment_Tag
-   Enter list of your env to choose from
+      Name: Environment_Tag
+      Enter list of your env to choose from
 #16: Public_IP_Required:
-   Name: Public_IP_Required
-   Single Select
-   Value: None,Public_IP, Elastic_IP
+      Name: Public_IP_Required
+      Single Select
+      Value: None,Public_IP, Elastic_IP
 #17: Text Parameter:
-    Name: User_Data
-    Enter the user data. Eache shell script line should be terminated with ';' .
+      Name: User_Data
+      Enter the user data. Eache shell script line should be terminated with ';' .
 #18: Boolean Parameter:
-    Name: Enable_Monitoring
+      Name: Enable_Monitoring   
 
-That is all. Copy the files at server and modify the path as per location on the server and wait for magic to happen
-
-
-
-
-
-
-
-
-
+That is all. Copy the files at server and modify the path as per location on the server and wait for magic to happen.

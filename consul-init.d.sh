@@ -32,6 +32,7 @@ logfile="/var/log/$prog"
 conffile="/etc/consul.conf"
 confdir="/etc/consul.d"
 bindaddr=`ip r | grep -Ev "docker\|default" | grep "0/" | awk '{print $NF}'| head -1`
+datadir="/tmp/consul"
 
 # pull in sysconfig settings
 [ -e /etc/sysconfig/$prog ] && . /etc/sysconfig/$prog
@@ -58,7 +59,7 @@ start() {
     daemon \
         --pidfile=$pidfile \
         --user=consul \
-        " { $exec agent -config-dir=$confdir --bind=${bindaddr} &>> $logfile & } ; echo \$! >| $pidfile "
+        " { $exec agent -config-dir=$confdir --bind=${bindaddr} --data-dir=${datadir} &>> $logfile & } ; echo \$! >| $pidfile "
 #        " { $exec agent -config-file=$conffile -config-dir=$confdir &>> $logfile & } ; echo \$! >| $pidfile "
 
 

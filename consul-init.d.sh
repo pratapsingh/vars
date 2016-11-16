@@ -59,7 +59,7 @@ start() {
     daemon \
         --pidfile=$pidfile \
         --user=consul \
-        " { $exec agent -config-dir=$confdir --bind=${bindaddr} --data-dir=${datadir} &>> $logfile & } ; echo \$! >| $pidfile "
+        " { $exec agent -ui -config-dir=$confdir --bind=${bindaddr} --data-dir=${datadir} &>> $logfile & } ; echo \$! >| $pidfile "
 #        " { $exec agent -config-file=$conffile -config-dir=$confdir &>> $logfile & } ; echo \$! >| $pidfile "
 
 

@@ -4,8 +4,8 @@
 # Where webserver is desired hostname or group/service it belongs to, then HostMetadata is AutoRegistration Action created under zabbix
 # for your project/team
 
-Hostname=$1
-Hostmetadata=$2
+Hostname=${1}
+Hostmetadata=${2}
 
 if which lsb_release &>> /dev/null; then
     OS=`lsb_release -a | sed -n 's/.*\(Ubuntu\).*/\1/p; s/.*\(Amazon\).*/\1/p; s/.*\(Debian\).*/\1/p' | head -1`
@@ -33,7 +33,6 @@ case "$OS" in
 "Amazon")
         URL='http://repo.zabbix.com/zabbix/3.0/rhel/6/x86_64/zabbix-agent-3.0.0-2.el6.x86_64.rpm'
 
-        yum update -y ; yum install unixODBC.x86_64  -y ; wget $URL; rpm -ivh zabbix-agent-*.rpm; rand=`ip r| grep -v default |  awk '{print $NF}'|grep -v eth` ; sed -i "s/Hostname=.*/Hostname=${HOSTNAME}-${rand}/g" /etc/zabbix/zabbix_agentd.conf; sed -i "s/Server=127.0.0.1/Server=zabbix.delhivery.com/g" /etc/zabbix/zabbix_agentd.conf; sed -i "s/ServerActive=127.0.0.1/ServerActive=zabbix.delhivery.com/g" /etc/zabbix/zabbix_agentd.conf; sed -i "/# HostMetadata=/aHostMetadata=${HostMetaData}" /etc/zabbix/zabbix_agentd.conf; sed -i '/StartAgents=3/aStartAgents=0' /etc/zabbix/zabbix_agentd.conf; sed -i '/# ListenIP=0.0.0.0/a ListenIP=0.0.0.0' /etc/zabbix/zabbix_agentd.conf ; /etc/init.d/zabbix-agent restart; rm /tmp/zabbix-agent*;
+        yum update -y ; yum install unixODBC.x86_64  -y ; wget $URL; rpm -ivh zabbix-agent-*.rpm; rand=`ip r| grep -v default |  awk '{print $NF}'|grep -v eth` ; sed -i "s/Hostname=.*/Hostname=${Hostname}-${rand}/g" /etc/zabbix/zabbix_agentd.conf; sed -i "s/Server=127.0.0.1/Server=zabbix.delhivery.com/g" /etc/zabbix/zabbix_agentd.conf; sed -i "s/ServerActive=127.0.0.1/ServerActive=zabbix.delhivery.com/g" /etc/zabbix/zabbix_agentd.conf; sed -i "/# HostMetadata=/aHostMetadata=${Hostmetadata}" /etc/zabbix/zabbix_agentd.conf; sed -i '/StartAgents=3/aStartAgents=0' /etc/zabbix/zabbix_agentd.conf; sed -i '/# ListenIP=0.0.0.0/a ListenIP=0.0.0.0' /etc/zabbix/zabbix_agentd.conf ; /etc/init.d/zabbix-agent restart; rm /tmp/zabbix-agent*;
 
 esac
-

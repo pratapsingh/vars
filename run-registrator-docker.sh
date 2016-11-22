@@ -10,9 +10,9 @@ cluster=$1
 yum install -y aws-cli jq
 
 #upstart-job
-description "Amazon EC2 Container Service (start task on instance boot)"
-author "Amazon Web Services"
-start on started ecs
+#description "Amazon EC2 Container Service (start task on instance boot)"
+#author "Amazon Web Services"
+#start on started ecs
 
 script
 	exec 2>>/var/log/ecs/ecs-start-task.log

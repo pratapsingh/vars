@@ -14,7 +14,7 @@ yum install -y aws-cli jq
 #author "Amazon Web Services"
 #start on started ecs
 
-sleep 60
+sleep 90
 
 	# Grab the container instance ARN and AWS region from instance metadata
 	instance_arn=$(curl -s http://localhost:51678/v1/metadata | jq -r '. | .ContainerInstanceArn' | awk -F/ '{print $NF}' )

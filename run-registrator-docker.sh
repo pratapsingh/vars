@@ -1,10 +1,3 @@
-Content-Type: multipart/mixed; boundary="==BOUNDARY=="
-MIME-Version: 1.0
-
---==BOUNDARY==
-MIME-Version: 1.0
-Content-Type: text/text/x-shellscript; charset="us-ascii"
-
 #!/bin/bash
 # Specify the cluster that the container instance should register into
 cluster=$1
@@ -15,9 +8,6 @@ cluster=$1
 
 # Install the AWS CLI and the jq JSON parser
 yum install -y aws-cli jq
---==BOUNDARY==
-MIME-Version: 1.0
-Content-Type: text/text/upstart-job; charset="us-ascii"
 
 #upstart-job
 description "Amazon EC2 Container Service (start task on instance boot)"
@@ -43,4 +33,3 @@ script
 	# Run the AWS CLI start-task command to start your task on this container instance
 	aws ecs start-task --cluster $cluster --task-definition $task_definition --container-instances $instance_arn --started-by $instance_arn --region $region
 end script
---==BOUNDARY==--

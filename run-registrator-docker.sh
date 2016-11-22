@@ -14,22 +14,20 @@ yum install -y aws-cli jq
 #author "Amazon Web Services"
 #start on started ecs
 
-script
-	exec 2>>/var/log/ecs/ecs-start-task.log
-	set -x
-	until curl -s http://localhost:51678/v1/metadata
-	do
-		sleep 1
-	done
+exec 2>>/var/log/ecs/ecs-start-task.log
+set -x
+until curl -s http://localhost:51678/v1/metadata
+do
+	sleep 1
+done
 
-	# Grab the container instance ARN and AWS region from instance metadata
-	instance_arn=$(curl -s http://localhost:51678/v1/metadata | jq -r '. | .ContainerInstanceArn' | awk -F/ '{print $NF}' )
-	cluster=$(curl -s http://localhost:51678/v1/metadata | jq -r '. | .Cluster' | awk -F/ '{print $NF}' )
-	region=$(curl -s http://localhost:51678/v1/metadata | jq -r '. | .ContainerInstanceArn' | awk -F: '{print $4}')
+# Grab the container instance ARN and AWS region from instance metadata
+instance_arn=$(curl -s http://localhost:51678/v1/metadata | jq -r '. | .ContainerInstanceArn' | awk -F/ '{print $NF}' )
+cluster=$(curl -s http://localhost:51678/v1/metadata | jq -r '. | .Cluster' | awk -F/ '{print $NF}' )
+region=$(curl -s http://localhost:51678/v1/metadata | jq -r '. | .ContainerInstanceArn' | awk -F: '{print $4}')
 
-	# Specify the task definition to run at launch
-	task_definition=$2
+# Specify the task definition to run at launch
+task_definition=$2
 
-	# Run the AWS CLI start-task command to start your task on this container instance
-	aws ecs start-task --cluster $cluster --task-definition $task_definition --container-instances $instance_arn --started-by $instance_arn --region $region
-end script
+# Run the AWS CLI start-task command to start your task on this container instance
+aws ecs start-task --cluster $cluster --task-definition $task_definition --container-instances $instance_arn --started-by $instance_arn --region $region

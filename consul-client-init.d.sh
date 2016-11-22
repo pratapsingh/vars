@@ -29,8 +29,8 @@ exec="/usr/local/bin/$prog"
 pidfile="/var/run/$prog.pid"
 lockfile="/var/lock/subsys/$prog"
 logfile="/var/log/$prog"
-conffile="/etc/consul.d/config.json"
-confdir="/etc/consul.d/client"
+conffile="/etc/consul.d/client/config.json"
+confdir="/etc/consul.d/"
 bindaddr=`ip r | grep -Ev "docker\|default" | grep "0/" | awk '{print $NF}'| head -1`
 datadir="/tmp/consul"
 

@@ -1540,7 +1540,7 @@ Note: You didn't specify an "-out" parameter to save this plan, so when
     network_interface.0.address:                         "10.128.0.3" => "<computed>"
     network_interface.0.name:                            "nic0" => "<computed>"
     network_interface.0.network:                         "default" => "default"
-    self_link:                                           "https://www.googleapis.com/compute/v1/projects/birdeye-gce-poc-162817/zones/us-central1-f/instances/www-server-2" => "<computed>"
+    self_link:                                           "https://www.googleapis.com/compute/v1/projects/www-gce-poc-162817/zones/us-central1-f/instances/www-server-2" => "<computed>"
     tags.#:                                              "1" => "1"
     tags.2626184083:                                     "www" => "www"
     tags_fingerprint:                                    "mpVJ1DyIP-Y=" => "<computed>"

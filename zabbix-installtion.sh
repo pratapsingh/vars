@@ -40,6 +40,8 @@ case "$OS" in
 
 esac
 
+sleep 10
+
 # diskstats user parameters config
 sudo mkdir -p /etc/zabbix/zabbix_agentd.d/
 sudo wget https://raw.githubusercontent.com/grundic/zabbix-disk-performance/master/userparameter_diskstats.conf -O /etc/zabbix/zabbix_agentd.d/userparameter_diskstats.conf

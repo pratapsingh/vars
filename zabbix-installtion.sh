@@ -10,7 +10,8 @@ SERVER=${3}  #zabbix server ip or fqdn name
 SA=${4}
 
 if [ "${SA}" -gt 0 ] ; then
-  IP=`ip r |grep "dev eth0"| tail -1 | awk {'print $NF'}`
+  #IP=`ip r |grep "dev eth0"| tail -1 | awk {'print $NF'}`
+  IP=`curl wgetip.com`
 else
   IP='0.0.0.0'
 fi

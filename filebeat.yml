@@ -3,8 +3,8 @@ filebeat:
     -
       paths:
         - /mnt/logs/birdeye/error*
-      input_type: paiduilogs
-      document_type: beat-paiduilogs
+      input_type: log
+      document_type: paiduilogs
   registry_file: /var/lib/filebeat/registry
 output:
   logstash: # not "elasticsearch"!

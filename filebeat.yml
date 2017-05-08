@@ -2,9 +2,9 @@ filebeat:
   prospectors:
     -
       paths:
-        - /home/glassfish/glassfish/domains/domain1/logs/server.log
-      input_type: glassfish
-      document_type: beat-glassfish
+        - /mnt/logs/birdeye/error*
+      input_type: paiduilogs
+      document_type: beat-paiduilogs
   registry_file: /var/lib/filebeat/registry
 output:
   logstash: # not "elasticsearch"!

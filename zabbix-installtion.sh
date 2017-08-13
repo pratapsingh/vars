@@ -38,7 +38,7 @@ case "$OS" in
 
 "Debian")
         URL='http://repo.zabbix.com/zabbix/3.2/debian/pool/main/z/zabbix/zabbix-agent_3.2.0-1+jessie_amd64.deb'
-        cd /tmp; apt-get  update; apt-get install wget telnet -y ; apt-get install libodbc1 libltdl7  libcurl3 -y ; wget $URL ; dpkg -i zabbix-agent_*.deb; rand=`hostname -I` ; sed -i "s/Hostname=.*/Hostname=${Hostname}-${rand}/g" /etc/zabbix/zabbix_agentd.conf; sed -i "s/Server=127.0.0.1/Server=${SERVER}/g" /etc/zabbix/zabbix_agentd.conf; sed -i "s/ServerActive=127.0.0.1/ServerActive=${SERVER}/g" /etc/zabbix/zabbix_agentd.conf; sed -i "/# HostMetadata=/aHostMetadata=$Hostmetadata" /etc/zabbix/zabbix_agentd.conf; sed -i "/StartAgents=3/aStartAgents=${SA}" /etc/zabbix/zabbix_agentd.conf; sed -i "/# ListenIP=0.0.0.0/a ListenIP=${IP}" /etc/zabbix/zabbix_agentd.conf ;/etc/init.d/zabbix-agent start; rm /tmp/zabbix-agent*; /etc/init.d/zabbix-agent restart
+        cd /tmp; apt-get  update; apt-get install wget telnet -y ; apt-get install lsb-core libodbc1 libltdl7  libcurl3 -y ; wget $URL ; dpkg -i zabbix-agent_*.deb; rand=`hostname -I` ; sed -i "s/Hostname=.*/Hostname=${Hostname}-${rand}/g" /etc/zabbix/zabbix_agentd.conf; sed -i "s/Server=127.0.0.1/Server=${SERVER}/g" /etc/zabbix/zabbix_agentd.conf; sed -i "s/ServerActive=127.0.0.1/ServerActive=${SERVER}/g" /etc/zabbix/zabbix_agentd.conf; sed -i "/# HostMetadata=/aHostMetadata=$Hostmetadata" /etc/zabbix/zabbix_agentd.conf; sed -i "/StartAgents=3/aStartAgents=${SA}" /etc/zabbix/zabbix_agentd.conf; sed -i "/# ListenIP=0.0.0.0/a ListenIP=${IP}" /etc/zabbix/zabbix_agentd.conf ;/etc/init.d/zabbix-agent start; rm /tmp/zabbix-agent*; /etc/init.d/zabbix-agent restart
 ;;
 
 "Amazon")

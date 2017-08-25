@@ -4,7 +4,7 @@
 
 Before begining with the job creation make sure you have "Active choices reactive parameter plugin" installed under your Jenkins. As we are going to use that alot here. 
 Install boto and configure boto credential under user running Jenkins.
-Create proper IAM role for AWS user to launch instance, create disk, elastic IP
+Create proper IAM policy for AWS user to launch instance, create disk, elastic IP
 
 Basic knowledge of Ansible and working with playbook is must. 
 

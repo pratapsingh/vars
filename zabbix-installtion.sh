@@ -3,14 +3,14 @@
 # /bin/bash zabbix_active-agent_installation.sh webserver facebook-app
 # Where webserver is desired hostname or group/service it belongs to, then HostMetadata is AutoRegistration Action created under zabbix
 # for your project/team
-
+# /bin/bash zabbix-installtion.sh vpn.internal devops zabbix.internal 3
 Hostname=${1}
 Hostmetadata=${2}
 SERVER=${3}  #zabbix server ip or fqdn name
 SA=${4}
 
 if [ "${SA}" -gt 0 ] ; then
-  IP=`hostname -I`
+  IP=`hostname -I | awk {'print $1'}`
   #IP=`ip r |grep "dev eth0"| tail -1 | awk {'print $NF'}`
   #IP=`curl wgetip.com`
 else

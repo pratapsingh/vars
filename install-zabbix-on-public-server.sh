@@ -10,6 +10,9 @@ SERVER=${3}  #zabbix server ip or fqdn name
 SA=${4}
 if [[ ! -z `dpkg -l | grep -i zabbix` ]] ;then
   echo -e "\nZabbix agent already installed\n";
+  sed -i "/# EnableRemoteCommands=0/EnableRemoteCommands=1/g" /etc/zabbix/zabbix_agentd.conf;
+  sudo service zabbix-agent restart
+  
 else
 
   if [[ "${SA}" -gt 0 ]] ; then

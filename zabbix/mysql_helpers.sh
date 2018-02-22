@@ -2,7 +2,7 @@
 #
 # Description: helpers for MySQL
 #
-# Author: Matteo Cerutti <matteo.cerutti@hotmail.co.uk>
+# Copy this file at location /etc/zabbix/zabbix_agentd.d/mysql_helpers.sh
 #
 #ZBX_HOME=${ZBX_HOME:-/usr/share/zabbix}
 ZBX_HOME=${ZBX_HOME:-/var/lib/zabbix}

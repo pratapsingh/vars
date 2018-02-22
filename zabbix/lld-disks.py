@@ -1,4 +1,5 @@
 #!/usr/bin/python
+#Copy this file at /usr/local/bin/lld-disks.py
 import os
 import json
 

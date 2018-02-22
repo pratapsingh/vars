@@ -2,7 +2,7 @@
 #
 # mysql.sh
 #
-# Author: Matteo Cerutti <matteo.cerutti@hotmail.co.uk>
+# Copy this file at /etc/zabbix/zabbix_agentd.d/mysql.sh
 #
 
 export MYSQL_MASTER_HOST={{DBHOST}}
